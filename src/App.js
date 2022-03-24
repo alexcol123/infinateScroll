@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useRef } from 'react'
-import { FaSearch, FaPlus } from 'react-icons/fa'
+import React, { useState, useEffect } from 'react'
+import { FaSearch } from 'react-icons/fa'
 import Photo from './Photo'
 import axios from 'axios'
 
@@ -41,6 +41,7 @@ function App() {
 
   useEffect(() => {
     fetchImages()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [page])
 
   const handleSubmit = (e) => {
@@ -69,6 +70,7 @@ function App() {
   useEffect(() => {
     window.addEventListener('scroll', event)
     return () => window.removeEventListener('scroll', event)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return (
@@ -97,7 +99,7 @@ function App() {
             />
           ))}
         </div>
-        {loading && <h2 className='loading'>Loading...</h2>}
+        {loading && <h2 className='loading'>Loading......</h2>}
       </section>
     </main>
   )
